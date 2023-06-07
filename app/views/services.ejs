@@ -29,3 +29,10 @@
 
 <%- include ('partials/bottom_nav.ejs') %>
 <%- include ('partials/footer.ejs') %>
+
+<script>
+  document.getElementById("yourFormID").addEventListener("submit", function(){
+     // after the form is submitted reset the form
+     this.reset();
+  });
+  </script>
