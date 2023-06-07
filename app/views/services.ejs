@@ -1,0 +1,31 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/main_nav.ejs') %>
+
+<main class="container">
+  <h1 class="display-4 text-center">My Services</h1>
+  <hr>
+  <div class="row">
+    <% const services = [
+        {img: "/img/general_programming.jpg", title: "General Programming", description: "I offer general programming services, proficient in multiple programming languages."},
+        {img: "/img/web_development.jpg", title: "Web Development", description: "I design and develop interactive and responsive websites."},
+        {img: "/img/mobile_apps.jpg", title: "Mobile Apps", description: "I create intuitive and user-friendly mobile applications for both Android and iOS."}
+      ]
+    %>
+    <% services.forEach((service) => { %>
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100">
+        <a href="#"><img class="card-img-top" src="<%= service.img %>" alt="<%= service.title %>"></a>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="#"><%= service.title %></a>
+          </h4>
+          <p class="card-text"><%= service.description %></p>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</main>
+
+<%- include ('partials/bottom_nav.ejs') %>
+<%- include ('partials/footer.ejs') %>
